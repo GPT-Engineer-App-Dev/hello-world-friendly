@@ -1,17 +1,17 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
-import Login from "./pages/Login.jsx";
-import { SupabaseAuthProvider } from "./integrations/supabase/auth.jsx";
+import Dishes from "./pages/Dishes.jsx";
+import { SupabaseProvider } from "./integrations/supabase/index.js";
 
 function App() {
   return (
     <Router>
-      <SupabaseAuthProvider>
+      <SupabaseProvider>
         <Routes>
           <Route exact path="/" element={<Index />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/dishes" element={<Dishes />} />
         </Routes>
-      </SupabaseAuthProvider>
+      </SupabaseProvider>
     </Router>
   );
 }
